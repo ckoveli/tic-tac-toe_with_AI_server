@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<!--Velickovic Djordje-->
+
+    <!--All the links for CSS and JavaScript files are putted in the head section-->
+    <head>
+        <title>Tic Tac Toe - Top Players</title>
+        <meta charset="UTF-8"> <!--Character encoding. Not necessary, but just to specify character encoding-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Reference to display screen-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="topBar"> <!--Division for top navigation bar containing links to other pages-->
+            <ul>
+            <li><a id="a2" href="../../index.html">Overview</a></li>
+            <li><a href="../game.html">Tic Tac Toe</a></li>
+            <li class="profileBtn" onclick="window.location.href = '../../users/profile/profile.html'"></li>
+            </ul>
+        </div>
+        <div class="game"> <!--Division for the little black box that you can visually see at center of the page. 
+                            All other divisions and tags are in this division, except for the "footer" at the bottom.
+                            This type of style, "playing in the box" is present across all the pages in this Project-->
+
+            <a href="../game.html"><div class="backBtn"></div></a> <!--A link to the game page, the one containing all game options.
+                                                                    There's a div tag because I used it for displaying "Back Button Image"
+                                                                    and make overall experience cleaner. It is also used in JavaScript file--->
+
+            <div class="tpTable"> <!--A division that contains the scores table and all the cells, either for Two Player or Multiplayer-->
+                <table>
+                    <thead>
+                    <tr>
+                        <td>TWO PLAYER</td>
+                    </tr>
+                    </thead>
+                    <tbody class="tpScores">
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mpTable">
+                <table>
+                    <thead>
+                        <td>MULTIPLAYER</td>
+                    </thead>
+                    <tbody class="mpScores">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tpHidden">
+                <h3>TWO PLAYER SCORES</h3>
+                <div class="listLeft">
+                    <table>
+
+                    </table>
+                </div>
+                <div class="listCenter">
+                    <table>
+                        
+                    </table>
+                </div>
+                <div class="listRight">
+                    <table>
+                        
+                    </table>
+                </div>
+            </div>
+
+            <div class="playerName"><h2 id="inputHolder">Player name: </h2><input id="playerName" maxlength="12" onchange="passScore2();"></div> <!--Division right above the Reset Scores button.
+                                                                                                                                                It just holds text to let the user know that the field
+                                                                                                                                                requires player name on the scoreboard to reset-->
+
+            <mark id="resetBtn" onclick="resetScore()">Reset Scores</mark> <!--A simple mark tag for button that takes effect in JavaScript. 
+                                                                            It allows the user to reset the game when the unwanted scores in the scores table-->
+            
+            <mark id="okBtn" onclick="okay()">OK</mark> <!--A simple mark tag for button that takes effect in JavaScript. It allows the user to finally reset the unwanted score after he has entered 
+                                                        the required player name-->
+            <mark id="cancelBtn" onclick="cancel()">Cancel</mark> <!--A simple mark tag for button that takes effect in JavaScript. It allows the user to cancel the current operation, which is reseting the scores-->
+            </div>
+
+            <p id="copy">&copy; Veličković Đorđe</p> <!--A "footer" at the bottom of the page to reserve my rights of this Project lol. Every page in this Project has this "footer"-->
+    </body>
+<!--Velickovic Djordje-->
+</html>

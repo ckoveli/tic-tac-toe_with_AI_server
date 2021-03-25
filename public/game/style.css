@@ -1,0 +1,286 @@
+/*Velickovic Djordje*/
+
+/*A Universal Selector that makes sure all html components sit properly in the page*/
+*{
+  box-sizing: border-box;
+  margin: auto;
+}
+/*Giving a background image to the body of the page, and specifying it's fonts*/
+body{
+  background-image: url(../assets/background/xox.jpg);
+  font-family: 'Courier New', Courier, monospace;
+}
+/*Removing the default <a> tag attributes and changing it's color to match the Project's theme*/
+a{
+  color: #e67e00;
+  text-decoration: none;
+}
+/*Making sure that the color stays the same when user hovers with mouse over the link*/
+a:hover{
+  color: #e67e00;
+}
+/*To differ from the previous <a> tag, I gave an id for another <a> tag where the link on the navigation bar sits*/
+#a2{
+  color: white;
+  transition-duration: 250ms;
+}
+/*Now it's changing the color to match the Project's theme and to let user know that it is a clickable link, and that it's a link to the page he has not opened*/
+#a2:hover{
+  letter-spacing: 0.5px;
+  color: #e67e00;
+  transition-duration: 250ms;
+}
+/*Setting attributes for the top navigation bar. Making sure it's position is fixed, so it is independent from other tags, it's width is same as page width, it has certain height, 
+background color, and some other attributes which take an effect on the tags inside this*/
+.topBar{
+  position: fixed;
+  padding: 25px;
+  width: 100%;
+  height: 75px;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: large;
+  text-align: center;
+}
+/*A tag inside the above tag. 
+Removing the default list type (Those dots), and giving it a 0 padding value so it sits in the center of the above tag*/
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+/*Just making sure that list items are in horizontal order and not vertical as default*/
+li{
+  display: inline-block;
+}
+li:first-child{
+  margin-right: 50px;
+  margin-left: 80%;
+}
+.profileBtn{
+  position: fixed;
+  top: 8px;
+  margin-left: 50px;
+  background: url(../assets/buttons/profileBtnBefore.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+}
+.profileBtn:hover{
+  cursor: pointer;
+  background: url(../assets/buttons/profileBtnAfter.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
+}
+/*A division that contains the links for all game options. There are 4 options thus 4 links.
+The links are named as #playBtn + link index (you will see below each).
+The attributes here gives this division a nice position under the navigation bar,
+a certain width and height, border radius and color so it matches the Project's theme*/
+.options{
+  position: absolute;
+  left: 25%;
+  top: 15%;
+  padding: 25px;
+  width: 50%;
+  height: 50%;
+  border-radius: 25px;
+  color: white;
+  opacity: 75%;
+  text-align: center;
+  animation: animationOn 0.75s;
+}
+/*As explained above, this is the first link tag which references to Single Player page. The attributes you see here
+are exactly the same as in rest of these links, except for the positioning, because the hiearchy and clear division between
+links is necessary. The all attributes except for the position ones are the standart scheme you can see in other tags, and that's
+because, again, to match the Project's theme, such as border radius, background and color*/
+#playBtn{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 250px;
+  height: 60px;
+  padding: 10px;
+  transform: translate(-50%, 0);
+  border: 1px solid #e67e00;
+  border-radius: 25px;
+  background: black;
+  color: #e67e00;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: xx-large;
+  text-decoration: none;
+  text-align: center;
+  transition-duration: 150ms;
+}
+/*Some nice feedback attributes when user hovers over the first link, and again standard attributes to match the Project's theme: 
+background alpha, width of the link and letter spacing*/
+#playBtn:hover{
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.75);
+  width: 300px;
+  letter-spacing: 2px;
+  transition-duration: 150ms;
+}
+/*As I explained above, all attributes are the same except for the positioning. So this is the second link which references to
+Two Player page, so it is obviously positioned right under the first link*/
+#playBtn2{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 250px;
+  height: 60px;
+  padding: 10px;
+  transform: translate(-50%, 0);
+  border: 1px solid #e67e00;
+  border-radius: 25px;
+  background: black;
+  color: #e67e00;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: xx-large;
+  text-decoration: none;
+  text-align: center;
+  transition-duration: 150ms;
+}
+/*The hover attributes are same accross all links on this page*/
+#playBtn2:hover{
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.75);
+  width: 300px;
+  letter-spacing: 2px;
+  transition-duration: 150ms;
+}
+/*Again, same attributes except for the positioning. This link references to Multiplayer page and has position attributes to sit right
+below the second link*/
+#playBtn3{
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  width: 250px;
+  height: 60px;
+  padding: 10px;
+  transform: translate(-50%, 0);
+  border: 1px solid #e67e00;
+  border-radius: 25px;
+  background: black;
+  color: #e67e00;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: xx-large;
+  text-decoration: none;
+  text-align: center;
+  transition-duration: 150ms;
+}
+/*The hover attributes are same accross all links on this page*/
+#playBtn3:hover{
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.75);
+  width: 300px;
+  letter-spacing: 2px;
+  transition-duration: 150ms;
+}
+/*Again, same attributes except for the positioning. This link references to Top Players page and has position attributes to sit right
+below the third link*/
+#playBtn4{
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 250px;
+  height: 60px;
+  padding: 10px;
+  transform: translate(-50%, 0);
+  border: 1px solid #e67e00;
+  border-radius: 25px;
+  background: black;
+  color: #e67e00;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: xx-large;
+  text-decoration: none;
+  text-align: center;
+  transition-duration: 150ms;
+}
+/*The hover attributes are same accross all links on this page*/
+#playBtn4:hover{
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.75);
+  width: 300px;
+  letter-spacing: 2px;
+  transition-duration: 150ms;
+}
+/*As explained in html file comment, this is divison for the game description. 
+Standard attributes you can often see in other tags, attributes for position, so it sits properly among with other tags in the page,
+and  some other attributes you can often see in other tags, attributes for border radius, background and color so it matches the Project's theme */
+.gameInfo{
+  position: absolute;
+  left: 2.5%;
+  top: 85%;
+  padding: 25px;
+  width: 95%;
+  height: 10.5%;
+  border-radius: 25px;
+  background: black;
+  color: white;
+  opacity: 75%;
+  font-style: italic;
+  font-weight: 100;
+  font-size: x-small;
+  text-align: center;
+  animation: animationOn 0.75s;
+}
+/*Styling a #copy tag which contains my name (explained in html file). Attributes for positioning, width so it is always the same as the window width, background and color*/
+#copy{
+  position: absolute;
+  top: 98%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);    
+  color: white;
+  text-align: center;
+}
+@keyframes animationOn{
+  from{
+      opacity: 0;
+      transform: rotateX(-10deg);
+  }
+  to{
+      opacity: 1;
+      transform: rotateX(0);
+      opacity: 75%;
+  }
+}
+@media screen and (max-width: 1560px){
+  .gameInfo{
+    top: 83.5%;
+    height: 12%;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 1050px){
+  .gameInfo{
+    top: 82%;
+    height: 13.5%;
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 802px){
+  .gameInfo{
+    top: 80.5%;
+    height: 15%;
+    padding: 10px;
+  }
+}
+@media screen and (max-width: 640px){
+  .gameInfo{
+    top: 79%;
+    height: 16.5%;
+    padding: 15px;
+    font-size: 9px;
+  }
+}
+@media screen and (max-height: 2000px){
+}
+@media screen and (max-height: 450px){
+}
+/*Velickovic Djordje*/

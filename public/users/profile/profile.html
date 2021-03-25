@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<!--Velickovic Djordje-->
+
+    <!--All the links for CSS and JavaScript files are putted in the head section-->
+    <head>
+        <title>Tic Tac Toe - Profile</title>
+        <meta charset="UTF-8"> <!--Character encoding. Not necessary, but just to specify character encoding-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Reference to display screen-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="../../p5.js"></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body onload="check()">
+        <div class="topBar"> <!--Division for top navigation bar containing links to other pages-->
+            <ul>
+            <li><a id="a2" href="../../index.html">Overview</a></li>
+            <li><a id="a2" href="../../game/game.html">Tic Tac Toe</a></li>
+            <li class="profileBtn" onclick="window.top.location = window.top.location"></li>
+            </ul>
+        </div>
+        <div class="game"> <!--Division for the little black box that you can visually see at center of the page. 
+                            All other divisions and tags are in this division, except for the "footer" at the bottom.
+                            This type of style, "playing in the box" is present across all the pages in this Project-->
+        <div class="gearBtn" onclick="options()"></div>
+        <div class="profileAvatar" onclick="options2()">
+            <img class="profilePic"></img>
+        </div>
+        <h2 id="username"></h2><br>
+        <h2 id="fullname"></h2><br>
+        <h2 id="score"></h2>
+        </div>
+        <div class="options">
+        <br>
+            <br><br><br><br><br><br>
+            <h3 id="uploadBtn" onclick="options2()">Change Profile Picture</h3>
+            <br><br>
+            <h3 id="fullBtn" onclick="options4()">Change Profile Name</h3>
+            <br><br>
+            <h3 id="passBtn" onclick="options3()">Change Password</h3>
+            <br><br>
+            <h3 onclick="logOut()">Log Out</h3>
+            <br><br>
+            <h3 onclick="cancel()">Cancel</h3>
+        </div>
+        <div class="options2">
+            <h3 id="picTitle">Profile Picture</h3>
+            <br>
+                <br><br><br><h3 id="submit" style="display: none;">Capture</h3><mark id="finishBtn" onclick="finish()">Set</mark><br><br><br>
+                <h3 id="capture" onclick="setup()">Capture</h3>
+                <br><br>
+                <h3 onclick="upload()">Upload</h3>
+                <br><br>
+                <h3 onclick="cancel()">Cancel</h3>
+                <input id="inputFile" type="file" accept="image/*" onchange="viewImage(event);" style="display: none;">
+            </div>
+        </div>
+        <div class="options3">
+            <h4 id="passTitle">Change Password</h4>
+            <br><br>
+            <div class="oldPassDiv">
+            <input id="oldPassword" type="password" maxlength="25" placeholder="Current Password">
+            </div>
+            <div class="newPassDiv"> 
+            <input id="newPassword" type="password" maxlength="12" placeholder="New Password">
+            <mark id="okBtn" onclick="changePass()">OK</mark>
+            </div>
+            <p id="err">Incorrect current password</p>
+            <p id="cancel" onclick="cancel()">Cancel</p>
+        </div>
+        <div class="options4">
+            <h4 id="fullTitle">Profile Name</h4>
+            <br><br>
+            <div class="fullNameDiv">
+            <input id="newFullName" type="text" maxlength="25" placeholder="New Profile Name">
+            </div>
+            <div class="passwordDiv"> 
+            <input id="password" type="password" maxlength="12" placeholder="Password">
+            <mark id="loginBtn" onclick="changeFullName()">OK</mark>
+            </div>
+            <p id="err">Incorrect current password</p>
+            <p id="cancel" onclick="cancel()">Cancel</p>
+        </div>
+
+        <p id="copy">&copy; Veličković Đorđe</p> <!--A "footer" at the bottom of the page to reserve my rights of this Project lol. Every page in this Project has this "footer"-->
+    </body>
+<!--Velickovic Djordje-->
+</html>

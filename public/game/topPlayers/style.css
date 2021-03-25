@@ -1,0 +1,359 @@
+/*Velickovic Djordje*/
+*{
+    box-sizing: border-box;
+    margin: auto;
+  }
+  body{
+    background-image: url(../../assets/background/xox.jpg);
+    font-family: 'Courier New', Courier, monospace;
+  }
+  a{
+    color: #e67e00;
+    text-decoration: none;
+  }
+  a:hover{
+    color: #e67e00;
+  }
+  #a2{
+    color: white;
+    transition-duration: 250ms;
+  }
+  #a2:hover{
+    letter-spacing: 0.5px;
+    color: #e67e00;
+    transition-duration: 250ms;
+  }
+  .topBar{
+    position: fixed;
+    padding: 25px;
+    width: 100%;
+    height: 75px;
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: large;
+    text-align: center;
+  }
+  ul{
+    list-style-type: none;
+    padding: 0;
+  }
+  /*Just making sure that list items are in horizontal order and not vertical as default*/
+  li{
+    display: inline-block;
+  }
+  li:first-child{
+    margin-right: 50px;
+    margin-left: 80%;
+  }
+  .profileBtn{
+    position: fixed;
+    top: 8px;
+    margin-left: 50px;
+    background: url(../../assets/buttons/profileBtnBefore.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    transition-duration: 250ms;
+  }
+  .profileBtn:hover{
+    cursor: pointer;
+    background: url(../../assets/buttons/profileBtnAfter.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 60px;
+    transition-duration: 250ms;
+    transition-delay: 250ms;
+  }
+  .game{
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 25px;
+    animation: animationOn 0.75s;
+  }
+  .tpTable{
+    display: block;
+    position: relative;
+    top: 20%;
+    left: 10%;
+    color: white;
+    font-size: 20px;
+  }
+  .tpTable table{
+    position: relative;
+    float: left;
+    width: 40%;
+    border-collapse: collapse;
+  }
+  .mpTable{
+    display: block;
+    position: relative;
+    top: 20%;
+    right: 10%;
+    color: white;
+    font-size: 20px;
+  }
+  .mpTable table{
+    position: relative;
+    float: right;
+    width: 40%;
+    border-collapse: collapse;
+  }
+  table tr{
+    position: relative;
+    border-bottom: 2px solid #e67e00;
+  }
+  table td{
+    position: relative;
+    width: 150px;
+  }
+  .tpTable td:first-child{
+    border-right: 2px solid #e67e00;
+  }
+  .tp{
+    height: 35px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    border-bottom: none;
+  }
+  #dotsBtn:hover{
+    cursor: pointer;
+    color: #e67e00;
+  }
+  .tpHidden{
+    display: none;
+    position: absolute;
+    top: 5%; left: 0; bottom: 0; right: 0;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: none;
+  }
+  .tpHidden h3{
+    color: #e67e00;
+  }
+  .listLeft table{
+    position: relative;
+    top: 5%; bottom: 0; 
+    float: left;
+    width: 40%;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    border-collapse: collapse;
+  }
+  .listCenter table{
+    position: relative;
+    top: 5%; left: 0; bottom: 0; right: 0;
+    height: 100%;
+    width: 40%;
+    text-align: center;
+    font-size: 18px;
+
+  }
+  .listRight table{
+    position: relative;
+    top: 5%; bottom: 0;
+    float: right;
+    width: 40%;
+    color: white;
+    border-collapse: collapse;
+  }
+  #score{
+    border: none;
+  }
+  #resetBtn{
+    display: block;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    width: 135px;
+    height: 32px;
+    padding: 5px;
+    transform: translate(-50%, 0);
+    border: 1px solid #e67e00;
+    border-radius: 25px;
+    background: black;
+    color: #e67e00;
+    font-family: Impact, Charcoal, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    transition-duration: 150ms;
+  }
+  #resetBtn:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.75);
+    width: 150px;
+    letter-spacing: 2px;
+    transition-duration: 150ms;
+  }
+  #okBtn{
+    display: none;
+    position: absolute;
+    top: 90%;
+    left: 40%;
+    width: 135px;
+    height: 32px;
+    padding: 5px;
+    transform: translate(-50%, 0);
+    border: 1px solid #e67e00;
+    border-radius: 25px;
+    background: black;
+    color: #e67e00;
+    font-family: Impact, Charcoal, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    transition-duration: 150ms;
+  }
+  #okBtn:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.75);
+    width: 150px;
+    letter-spacing: 2px;
+    transition-duration: 150ms;
+  }
+  #cancelBtn{
+    display: none;
+    position: absolute;
+    top: 90%;
+    left: 60%;
+    width: 135px;
+    height: 32px;
+    padding: 5px;
+    transform: translate(-50%, 0);
+    border: 1px solid #e67e00;
+    border-radius: 25px;
+    background: black;
+    color: #e67e00;
+    font-family: Impact, Charcoal, sans-serif;
+    text-decoration: none;
+    text-align: center;
+    transition-duration: 150ms;
+  }
+  #cancelBtn:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.75);
+    width: 150px;
+    letter-spacing: 2px;
+    transition-duration: 150ms;
+  }
+  #inputHolder{
+    display: none;
+    margin-top: 200px;
+    font-weight: 100;
+    color: white;
+  }
+.playerName input{
+  display: none;
+  width: 200px;
+  height: 25px;
+  margin-top: 5px;
+  border: 1px solid #e67e00;
+  padding: 10px;
+  border-radius: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  background: rgb(0, 0, 0); 
+  color: #e67e00;
+  transition-duration: 150ms;
+}
+.playerName input:hover{
+  cursor: pointer;
+  width: 215px;
+  letter-spacing: 2px;
+  background: rgba(0, 0, 0, 0.25);
+  transition-duration: 150ms;
+}
+  .backBtn{
+    position: absolute;
+    background: url(../../assets/buttons/backBtnBefore.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    top: 2%;
+    left: 2%;
+    width: 60px;
+    height: 60px;
+    transition-duration: 250ms;
+  }
+  .backBtn:hover{
+    cursor: pointer;
+    background: url(../../assets/buttons/backBtnAfter.png);
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 2%;
+    left: 2%;
+    width: 60px;
+    height: 60px;
+    transition-duration: 250ms;
+    transition-delay: 250ms;
+  }
+  #copy{
+    position: absolute;
+    top: 98%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);    
+    color: white;
+    text-align: center;
+  }
+  @keyframes animationOn{
+    from{
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to{
+        opacity: 1;
+        transform: rotateX(0);
+        opacity: 100%;
+    }
+  }
+  @media screen and (max-width: 1460px){
+    .game{
+      left: 20%;
+      width: 60%;
+    }
+    #okBtn{
+      left: 35%;
+    }
+    #cancelBtn{
+      left: 65%;
+    }
+  }
+  @media screen and (max-width: 1000px){
+    .game{
+      left: 5%;
+      width: 90%;
+    }
+    #okBtn{
+      left: 30%;
+    }
+    #cancelBtn{
+      left: 70%;
+    }
+  }
+  @media screen and (max-height: 2000px){
+    .game{
+      height: 470px;
+    }
+  }
+  @media screen and (max-height: 450px){
+    .game{
+      margin-top: 50px;
+    }
+    #copy{
+      position: fixed;
+      top: 97%;
+    }
+  }
+  /*Velickovic Djordje*/

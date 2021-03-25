@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<!--Velickovic Djordje-->
+
+    <!--All the links for CSS and JavaScript files are putted in the head section-->
+    <head>
+        <title>Tic Tac Toe - Register</title>
+        <meta charset="UTF-8"> <!--Character encoding. Not necessary, but just to specify character encoding-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Reference to display screen-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="../../p5.js" defer></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div class="topBar"> <!--Division for top navigation bar containing links to other pages-->
+            <ul>
+            <li><a id="a2" href="../../index.html">Overview</a></li>
+            <li><a id="a2" href="../../game/game.html">Tic Tac Toe</a></li>
+            <li class="profileBtn" onclick="window.location.href = '../profile/profile.html'"></li>
+            </ul>
+        </div>
+        <div class="game"> <!--Division for the little black box that you can visually see at center of the page. 
+                            All other divisions and tags are in this division, except for the "footer" at the bottom.
+                            This type of style, "playing in the box" is present across all the pages in this Project-->
+		
+            <a href="../game.html"><div class="backBtn"></div></a> <!--A link to the game page, the one containing all game options.
+                There's a div tag because I used it for displaying "Back Button Image"
+                and make overall experience cleaner. It is also used in JavaScript file--->
+
+            <!--This type of division is present only in this page. It allows the users to enter their unique names for playing game-->
+            <div class = "registerForm">
+                <h4>Sign Up</h4>
+                <div class="fullnameDiv">
+                <input id="fullname" type="text" maxlength="25" placeholder="Full Name">
+                </div>
+                <div class="usernameDiv">
+                <input id="username" type="text" maxlength="25" placeholder="Username">
+                </div>
+                <div class="passwordDiv"> 
+                <input id="password" type="password" maxlength="12" placeholder="Password">
+                <mark id="nextBtn" onclick="next()">Next</mark>
+                </div>
+                <p id="err">Username already taken</p>
+                <p id="acc">Have an account? <a href="../login/login.html">Log In</a></p>
+            </div> 
+            
+            <div class="optionalForm">
+                <div class="profileAvatar" onclick="options()">
+                    <img class="profilePic"></img>
+                </div>
+                <h3 id="picTitle">Profile Picture</h3>
+                <br>
+                <mark id="uploadBtn" onclick="options()">Set</mark>
+                <input id="inputFile" type="file" accept="image/*" onchange="viewImage(event);" style="display: none;">
+                <br><br><br>
+                <mark id="finishBtn" onclick="finish()">Finish</mark>
+                <div class="options">
+                    <br>
+                        <br><br><br><h3 id="submit" style="display: none;">Capture</h3><br><br><br>
+                        <h3 id="capture" onclick="setup()">Capture</h3>
+                        <br><br>
+                        <h3 onclick="upload()">Upload</h3>
+                        <br><br>
+                        <h3 onclick="cancel()">Cancel</h3>
+                    </div>
+            </div>
+        </div>
+
+            <p id="copy">&copy; Veličković Đorđe</p> <!--A "footer" at the bottom of the page to reserve my rights of this Project lol. Every page in this Project has this "footer"-->
+    </body>
+<!--Velickovic Djordje-->
+</html>

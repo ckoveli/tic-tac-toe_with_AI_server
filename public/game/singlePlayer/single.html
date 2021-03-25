@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<!--Velickovic Djordje-->
+
+	<!--All the links for CSS and JavaScript files are putted in the head section-->
+	<head>
+		<title>Tic Tac Toe - Single Player</title>
+		<meta charset="UTF-8"> <!--Character encoding. Not necessary, but just to specify character encoding-->
+		<meta name="viewport" content="width=device-width, initial-scale=1"> <!--Reference to display screen-->
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<div class="topBar"> <!--Division for top navigation bar containing links to other pages-->
+            <ul>
+			<li><a id="a2" href="../../index.html">Overview</a></li>
+			<li><a href="../game.html">Tic Tac Toe</a></li>
+			<li class="profileBtn" onclick="window.location.href = '../../users/profile/profile.html'"></li>
+            </ul>
+		</div>
+		<div class="game"> <!--Division for the little black box that you can visually see at center of the page. 
+							All other divisions and tags are in this division, except for the "footer" at the bottom.
+							This type of style, "playing in the box" is present across all the pages in this Project-->
+		
+		<a href="../game.html"><div class="backBtn"></div></a> <!--A link to the game page, the one containing all game options.
+																There's a div tag because I used it for displaying "Back Button Image"
+																and make overall experience cleaner. It is also used in JavaScript file--->
+		
+		<!--Divisions used in JavaScript for playing music and make the experience entertaining. It is also used in CSS to display "Sound Buttons"-->
+		<div class="soundOnBtn" onclick="soundOn()" title="Sound Off"></div> 
+		<div class="soundOffBtn" onclick="soundOff()" title="Sound On"></div>
+
+		<!--Division where Tic Tac Toe board and some text feedback (when user wins or loses and when it's a tie game) sits in
+		As you might've escpect, 9 cells because it's a tic tac toe! Also used in JavaScript to bring functionality-->
+		<div class="field">
+		<table>
+			<tr>
+				<td class="cell" id="0"></td>
+				<td class="cell" id="1"></td>
+				<td class="cell" id="2"></td>
+			</tr>
+			<tr>
+				<td class="cell" id="3"></td>
+				<td class="cell" id="4"></td>
+				<td class="cell" id="5"></td>
+			</tr>
+			<tr>
+				<td class="cell" id="6"></td>
+				<td class="cell" id="7"></td>
+				<td class="cell" id="8"></td>
+			</tr>
+		</table>
+
+		<div class="gameStart">Make your Move!</div> <!--Division inside the ".field" division. It is used to inform a user that game has started and to make a move-->
+
+		<!--Another division also inside the ".field" division. Used for displaying text feedback when user wins or loses and when it's a tie game-->
+		<div class="rezultat">
+			<div class="text"></div>
+		</div>
+		</div>
+
+		<!--This type of division is present only in this page. It allows the user to choose the sign for playing the game (X or O)-->
+	    <div class = "izbor">
+		  <button onClick="izbor('X')">X</button>
+		  <p style="display: inline;">or</p>
+	      <button onClick="izbor('O')">O</button>
+		</div>
+		
+		<mark id="playBtn" onclick="novaIgra()">Replay</mark> <!--A simple mark tag for button that takes effect in JavaScript. It allows the user to restart the game when the game is over-->
+
+		<!--These two divisions are used when the game is in progress. It displays the current scores of the user and ai-->
+		<div class="playerScore">YOU: </div>
+		<div class="aiScore">AI: </div>
+		</div>
+
+		<p id="copy">&copy; Veličković Đorđe</p> <!--A "footer" at the bottom of the page to reserve my rights of this Project lol. Every page in this Project has this "footer"-->
+	</body>
+<!--Velickovic Djordje-->
+</html>

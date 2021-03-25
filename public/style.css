@@ -1,0 +1,265 @@
+/*Velickovic Djordje*/
+
+/*A Universal Selector that makes sure all html components sit properly in the page*/
+*{
+    box-sizing: border-box;
+    margin: auto;
+}
+/*Giving a background image to the body of the page, and specifying it's fonts*/
+body{
+    background-image: url(./assets/background/xox.jpg);
+    font-family: 'Courier New', Courier, monospace;
+}
+/*Removing the default <a> tag attributes and changing it's color to match the Project's theme*/
+a{
+    color: #e67e00;
+    text-decoration: none;
+}
+/*Making sure that the color stays the same when user hovers with mouse over the link*/
+a:hover{
+    color: #e67e00;
+}
+/*To differ from the previous <a> tag, I gave an id for another <a> tag where the link on the navigation bar sits*/
+#a2{
+    color: white;
+    transition-duration: 250ms;
+}
+/*Now it's changing the color to match the Project's theme and to let user know that it is a clickable link, and that it's a link to the page he has not opened*/
+#a2:hover{
+    letter-spacing: 0.5px;
+    color: #e67e00;
+    transition-duration: 250ms;
+}
+/*Setting attributes for the top navigation bar. Making sure it's position is fixed, so it is independent from other tags, it's width is same as page width, it has certain height, 
+background color, and some other attributes which take an effect on the tags inside this*/
+.topBar{
+    position: fixed;
+    padding: 25px;
+    width: 100%;
+    height: 75px;
+    background: rgba(0, 0, 0, 0.95);
+    color: white;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: large;
+    text-align: center;
+}
+/*A tag inside the above tag. 
+Removing the default list type (Those dots), and giving it a 0 padding value so it sits in the center of the above tag*/
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+  /*Just making sure that list items are in horizontal order and not vertical as default*/
+li{
+  display: inline-block;
+}
+li:first-child{
+  margin-right: 50px;
+  margin-left: 80%;
+}
+.profileBtn{
+  position: fixed;
+  top: 8px;
+  margin-left: 50px;
+  background: url(./assets/buttons/profileBtnBefore.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+}
+.profileBtn:hover{
+  cursor: pointer;
+  background: url(./assets/buttons/profileBtnAfter.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
+}
+/*A division that contains the page description. The attributes here gives it a nice position under the navigation bar,
+a certain width and height, border radius, background and color so it matches the Project's theme*/
+.pageInfo{
+    position: absolute;
+    left: 25%;
+    top: 15%;
+    padding: 25px;
+    width: 50%;
+    height: 125px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    opacity: 75%;
+    text-align: center;
+    animation: animationOn 0.75s;
+}
+/*A mark containing the link for game page. The attributes here are giving it a unique, button like look and match with Project's theme.
+There are standard attributes for position, so it sits properly among with other tags in the page, and  some other attributes you can often see
+on other tags, attributes for border radius, background and color so it matches the Project's theme*/
+#playBtn{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 200px;
+    height: 50px;
+    padding: 10px;
+    transform: translate(-50%, 0);
+    border: 1px solid #e67e00;
+    border-radius: 25px;
+    background: black;
+    color: #e67e00;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: x-large;
+    text-decoration: none;
+    text-align: center;
+    transition-duration: 150ms;
+    animation: animationOnBtn 0.75s;
+}
+/*Giving the previous tag a nice feedback when user hovers with the mouse over it. Changing it's width, letter spacing and background alpha.*/
+#playBtn:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.75);
+    width: 250px;
+    letter-spacing: 2px;
+    transition-duration: 150ms;
+}
+/*As explained in html file comment, this is another divison for page description, but containing more detailed information. Standard attributes
+you can often see in other tags, attributes for position, so it sits properly among with other tags in the page, and  some other attributes you can often see
+on other tags, attributes for border radius, background and color so it matches the Project's theme */
+.gameInfo{
+    position: absolute;
+    left: 25%;
+    top: 46.5%;
+    padding: 25px;
+    width: 50%;
+    height: 65px;
+    border-radius: 25px;
+    background: black;
+    color: white;
+    opacity: 75%;
+    text-align: left;
+    animation: animationOn 0.75s;
+}
+/*Again as in previous tags, just giving the user a nice feedback when he hovers with the mouse over the tag and this time to know that this section is expandable*/
+.gameInfo:hover{
+    cursor: default;
+    border: 1px solid #e67e00;
+    transition-duration: 50ms;
+}
+/*A mark tag inside the previous tag, containing a link to the game page*/
+#joy{
+    color: #e67e00;
+    transition-duration: 1000ms;
+}
+/*Again some feedback when the user hovers with the mouse over it*/
+#joy:hover{
+    color: white;
+    transition-duration: 1000ms;
+}
+/*A mark tag that takes more effect in JavaScript. It is located in .gameInfo tag and when clicked it expands the text.*/
+#readBtn{
+    background: transparent;
+    color: white;
+    text-decoration: underline;
+}
+/*Again some feedback when the user hovers with the mouse over the tag*/
+#readBtn:hover{
+    cursor: pointer;
+    color: #e67e00; 
+}
+/*Another mark tag that also takes more effect in JavaScript. Also located in .gameInfo tag, but appears after the #readBtn tag is clicked*/
+#more{
+    display: none;
+    background: transparent;
+    color: white;
+}
+/*Giving the bottom literal tags proper position, and color theme so it all matches the Project's theme*/
+.tags{
+    position: absolute;
+    top: 80%;
+    width: 100%;
+    color: #e67e00;
+    font-weight: 900;
+    font-size: large;
+    text-align: center;
+    animation: animationOn 1s;
+}
+/*Next two blocks have margin attributes for making a clear separation between the literal tags*/
+.tags ul:last-child li{
+    margin-left: 400px;
+}
+.tags ul:first-child li{
+    margin-right: 400px;
+}
+/*Some nice feedback when user hovers over with the mouse, giving the text a shadow*/
+.tags ul li:hover{
+    cursor: default;
+    text-shadow: -2px 3px black;
+}
+/*Styling a #copy tag which contains my name (explained in html file). Attributes for positioning, width so it is always the same as the window width, background and color*/
+#copy{
+    position: absolute;
+    top: 98%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.95);    
+    color: white;
+    text-align: center;
+}
+@keyframes animationOn{
+    from{
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+    to{
+        opacity: 1;
+        transform: rotateX(0);
+        opacity: 75%;
+    }
+}
+@keyframes animationOnBtn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 1713px){   
+    .pageInfo{
+        left: 24%;
+        width: 52%;
+        height: 150px;
+        padding: 20px;
+    }
+    #playBtn{
+        top: 38%;
+    }
+    .gameInfo{
+        top: 49.5%;
+    }
+}
+@media screen and (max-width: 1184px){
+    .pageInfo{
+        left: 5%;
+        width: 90%;
+        padding: 15px;
+    }
+    .gameInfo{
+        left: 5%;
+        width: 90%;
+        padding: 15px;
+    }
+}
+@media screen and (max-width: 684px){
+    .pageInfo{
+        padding: 10px;
+        font-size: 15px;
+    }
+    .tags{
+        left: -200px;
+    }
+}
+@media screen and (max-width: 640px){
+}
+/*Velickovic Djordje*/

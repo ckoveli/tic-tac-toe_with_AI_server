@@ -1,0 +1,267 @@
+/*Velickovic Djordje*/
+
+/*A Universal Selector that makes sure all html components sit properly in the page*/
+*{
+  box-sizing: border-box;
+  margin: auto;
+}
+/*Giving a background image to the body of the page, and specifying it's fonts*/
+body{
+  background-image: url(../../assets/background/xox.jpg);
+  font-family: 'Courier New', Courier, monospace;
+}
+/*Removing the default <a> tag attributes and changing it's color to match the Project's theme*/
+a{
+  color: #e67e00;
+  text-decoration: none;
+}
+/*Making sure that the color stays the same when user hovers with mouse over the link*/
+a:hover{
+  color: #e67e00;
+}
+/*To differ from the previous <a> tag, I gave an id for another <a> tag where the link on the navigation bar sits*/
+#a2{
+  color: white;
+  transition-duration: 250ms;
+}
+/*Now it's changing the color to match the Project's theme and to let user know that it is a clickable link, and that it's a link to the page he has not opened*/
+#a2:hover{
+  letter-spacing: 0.5px;
+  color: #e67e00;
+  transition-duration: 250ms;
+}
+/*Setting attributes for the top navigation bar. Making sure it's position is fixed, so it is independent from other tags, it's width is same as page width, it has certain height, 
+background color, and some other attributes which take an effect on the tags inside this*/
+.topBar{
+  position: fixed;
+  padding: 25px;
+  width: 100%;
+  height: 75px;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: large;
+  text-align: center;
+}
+/*A tag inside the above tag. 
+Removing the default list type (Those dots), and giving it a 0 padding value so it sits in the center of the above tag*/
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+/*Just making sure that list items are in horizontal order and not vertical as default*/
+li{
+display: inline-block;
+}
+li:first-child{
+margin-right: 50px;
+margin-left: 80%;
+}
+.profileBtn{
+  position: fixed;
+  top: 8px;
+  margin-left: 50px;
+  background: url(../../assets/buttons/profileBtnBefore.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+}
+.profileBtn:hover{
+  cursor: pointer;
+  background: url(../../assets/buttons/profileBtnAfter.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
+}
+/*A division where all other tags in the game sit (Explained in html file).
+Standard attributes that you can see in other tags, just to match the Project's theme.
+Attributes for background alpha, border radius and positioning*/
+.game{
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  border-radius: 25px;
+  animation: animationOn 0.75s;
+}
+/*As explained in html file, this is a tag where Tic Tac Toe board sits in.
+It just has attributes for position:
+position relative, so it is relative to the .game (The box) tag and acording to that
+width and margin attributes, and at the end, the Tic Tac Toe board is perfectly in the center*/
+.field{
+  position: relative;
+  top: 50%; 
+  left: 50%; 
+  margin-top: -200px; 
+  margin-left: -150px;
+  width: 350px;
+}
+.backBtn{
+  position: absolute;
+  background: url(../../assets/buttons/backBtnBefore.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+  top: 2%;
+  left: 2%;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+}
+/*As in all other tags, just standard attributes to match the Project's theme,
+and changing the background image when user hovers with the mouse over this tag,
+so the overall experience is pleasing*/
+.backBtn:hover{
+  cursor: pointer;
+  background: url(../../assets/buttons/backBtnAfter.png);
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 2%;
+  left: 2%;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
+}
+.field button{
+  float: left;
+  height: 100px;
+  width: 100px;
+  margin: 0px;
+  padding: 0px;
+  font-size: 50px;
+  border-left: none;
+  border-right: 2px solid #e67e00;
+  background: transparent;
+  color: white;
+}
+button:nth-child(1){
+  border-top: none;
+  border-bottom: 2px solid #e67e00;
+}
+button:nth-child(2){
+  border-top: none;
+  border-bottom: 2px solid #e67e00;
+}
+button:nth-child(3){
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid #e67e00;
+}
+button:nth-child(4){
+  border-top: none;
+  border-bottom: 2px solid #e67e00;
+}
+button:nth-child(5){
+  border-top: none;
+  border-bottom: 2px solid #e67e00;
+}
+button:nth-child(6){
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid #e67e00;
+}
+button:nth-child(7){
+  border-top: none;
+  border-bottom: none;
+}
+button:nth-child(8){
+  border-top: none;
+  border-bottom: none;
+}
+button:nth-child(9){
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+}
+button:hover{
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  transition-duration: 250ms;
+}
+.rezultat{
+  position: absolute;
+  width: 400px;
+  height: 50px;
+  margin-left: -50px;
+  margin-top: 320px;
+  padding-top: 7px;
+  text-align: center;
+  border-radius: 12px;
+  background: black;
+  color: white;
+  opacity: 75%;
+}
+.gameStart{
+  width: 300px;
+  height: 50px;
+  text-align: center;
+  border-radius: 12px;
+  background: black;
+  color: white;
+  opacity: 75%;
+}
+#symbol{
+  font-size: 30px;
+  color: #e67e00;
+}
+#messages{
+  font-size: 28px;
+}
+/*Styling a #copy tag which contains my name (explained in html file). Attributes for positioning, width so it is always the same as the window width, background and color*/
+#copy{
+  position: absolute;
+  top: 98%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);    
+  color: white;
+  text-align: center;
+}
+@keyframes animationOn{
+  from{
+      opacity: 0;
+      transform: rotateX(-10deg);
+  }
+  to{
+      opacity: 1;
+      transform: rotateX(0);
+      opacity: 100%;
+  }
+}
+@media screen and (max-width: 1460px){
+  .game{
+    left: 20%;
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1000px){
+  .game{
+    left: 5%;
+    width: 90%;
+  }
+}
+@media screen and (max-height: 2000px){
+  .game{
+    height: 470px;
+  }
+}
+@media screen and (max-height: 450px){
+  .game{
+    margin-top: 50px;
+  }
+  #copy{
+    position: fixed;
+    top: 97%;
+  }
+}
+/*Velickovic Djordje*/

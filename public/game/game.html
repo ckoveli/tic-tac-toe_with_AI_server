@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<!--Velickovic Djordje-->
+
+    <!--All the links for CSS and JavaScript files are putted in the head section-->
+    <head>
+        <title>Tic Tac Toe</title>
+        <meta charset="UTF-8"> <!--Character encoding. Not necessary, but just to specify character encoding-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Reference to display screen-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="topBar"> <!--Division for top navigation bar containing links to other pages-->
+            <ul>
+            <li><a id="a2" href="../index.html">Overview</a></li>
+            <li><a href="game.html">Tic Tac Toe</a></li>
+            <li class="profileBtn" onclick="window.location.href = '../users/profile/profile.html'"></li>
+            </ul>
+        </div>
+
+        <div class="options"> <!--Division containing links to all game options (e.g. Single Player, Multiplayer...), right after the navigation bar-->
+            <mark id="playBtn"><a href="singlePlayer/single.html">Single Player</a></mark>
+            <mark id="playBtn2"><a href="twoPlayer/two.html">Two Player</a></mark>
+            <mark id="playBtn3">Multiplayer</mark>
+            <mark id="playBtn4"><a href="topPlayers/top.html">Top Players</a></mark>
+        </div>
+
+        <div class="gameInfo"> <!--Simple division for describing the Tic Tac Toe game that you can visually see at very bottom of the page right before the copyright "footer" containing my name-->
+            <h1>Tic-tac-toe or Xs and Os is paper and pencil game for two players, X and O, who take turns marking the spaces in a 3x3 grid.
+                The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.</h1>
+        </div>
+
+        <p id="copy">&copy; Veličković Đorđe</p> <!--A "footer" at the bottom of the page to reserve my rights of this Project lol. Every page in this Project has this "footer"-->
+    </body>
+<!--Velickovic Djordje-->
+</html>

@@ -1,0 +1,471 @@
+/*Velickovic Djordje*/
+
+/*A Universal Selector that makes sure all html components sit properly in the page*/
+*{
+  box-sizing: border-box;
+  margin: auto;
+}
+/*Giving a background image to the body of the page, and specifying it's fonts*/
+body{
+  background-image: url(../../assets/background/xox.jpg);
+  font-family: 'Courier New', Courier, monospace;
+}
+/*Removing the default <a> tag attributes and changing it's color to match the Project's theme*/
+a{
+  color: #e67e00;
+  text-decoration: none;
+}
+/*Making sure that the color stays the same when user hovers with mouse over the link*/
+a:hover{
+  color: #e67e00;
+}
+/*To differ from the previous <a> tag, I gave an id for another <a> tag where the link on the navigation bar sits*/
+#a2{
+  color: white;
+  transition-duration: 250ms;
+}
+/*Now it's changing the color to match the Project's theme and to let user know that it is a clickable link, and that it's a link to the page he has not opened*/
+#a2:hover{
+  letter-spacing: 0.5px;
+  color: #e67e00;
+  transition-duration: 250ms;
+}
+/*Setting attributes for the top navigation bar. Making sure it's position is fixed, so it is independent from other tags, it's width is same as page width, it has certain height, 
+background color, and some other attributes which take an effect on the tags inside this*/
+.topBar{
+  position: fixed;
+  padding: 25px;
+  width: 100%;
+  height: 75px;
+  background: rgba(0, 0, 0, 0.95);
+  color: white;
+  font-family: Impact, Charcoal, sans-serif;
+  font-size: large;
+  text-align: center;
+}
+/*A tag inside the above tag. 
+Removing the default list type (Those dots), and giving it a 0 padding value so it sits in the center of the above tag*/
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+/*Just making sure that list items are in horizontal order and not vertical as default*/
+li{
+  display: inline-block;
+}
+li:first-child{
+  margin-right: 50px;
+  margin-left: 80%;
+}
+.profileBtn{
+  position: fixed;
+  top: 8px;
+  margin-left: 50px;
+  background: url(../../assets/buttons/profileBtnBefore.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+}
+.profileBtn:hover{
+  cursor: pointer;
+  background: url(../../assets/buttons/profileBtnAfter.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
+}
+/*A division where all other tags in the game sit (Explained in html file).
+Standard attributes that you can see in other tags, just to match the Project's theme.
+Attributes for background alpha, border radius and positioning*/
+.game{
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
+  animation: animationOn 0.75s;
+}
+/*As explained in html file, this is a tag where Tic Tac Toe board sits in.
+It just has attributes for position:
+position relative, so it is relative to the .game (The box) tag and acording to that
+width and margin attributes, and at the end, the Tic Tac Toe board is perfectly in the center*/
+.field{
+  display: none;
+  position: relative;
+  width: 320px;
+  margin-top: 90px;
+}
+/*Back button division which references to the game page (explained in html file).
+Attributes for position, so it is in the top left corner of the .game tag,
+attributes for the size so it is proportional to the other elements, 
+and a background url attribute because I have a nice icon in the assets folder for this division*/
+.backBtn{
+  position: absolute;
+  background: url(../../assets/buttons/backBtnBefore.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+  top: 2%;
+  left: 2%;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+}
+/*As in all other tags, just standard attributes to match the Project's theme,
+and changing the background image when user hovers with the mouse over this tag,
+so the overall experience is pleasing*/
+.backBtn:hover{
+  cursor: pointer;
+  background: url(../../assets/buttons/backBtnAfter.png);
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 2%;
+  left: 2%;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+  transition-delay: 250ms;
+}
+/*Sound On division which takes an effect in JavaScript for playing ingame music.
+Just like in the tag above, there are attributes for position, this time so it sits in the top right corner
+of the .game tag, attributes for the size so it is proportional to the other elements,
+and a background url attribute because again, I have some icons in the assets folder*/
+.soundOnBtn{
+  display: block;
+  position: absolute;
+  background: url(../../assets/buttons/soundOnBtnAfter.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 2%;
+  left: 92%;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+}
+/*As in all other tags, just standard attributes to match the Project's theme,
+and changing the background image when user hovers with the mouse over this tag,
+so the overall experience is pleasing*/
+.soundOnBtn:hover{
+  cursor: pointer;
+  position: absolute;
+  background: url(../../assets/buttons/soundOffBtnBefore.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 2%;
+  left: 92%;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+  transition-delay: 1s;
+}
+/*Just like in above, but this time it's a Sound Off division which takes an effect in JavaScript for stoping ingame music.
+There are attributes for position, so it sits in the top right corner of the .game tag, 
+attributes for the size so it is proportional to the other elements,
+and a background url attribute because again, I hAvE sOmE IcOnS iN tHe aSsEtS fOlDeR*/
+.soundOffBtn{
+  display: none;
+  position: absolute;
+  background: url(../../assets/buttons/soundOffBtnAfter.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 2%;
+  left: 92%;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+}
+/*As in all other tags, just standard attributes to match the Project's theme,
+and changing the background image when user hovers with the mouse over this tag,
+so the overall experience is pleasing*/
+.soundOffBtn:hover{
+  cursor: pointer;
+  position: absolute;
+  background: url(../../assets/buttons/soundOnBtnBefore.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 2%;
+  left: 92%;
+  width: 60px;
+  height: 60px;
+  transition-duration: 250ms;
+  transition-delay: 1s;
+}
+/*The following 6 blocks are the part of the .field tag (Tic Tac Toe board, remember).
+Here, in the following 6 block I just added some attributes for borders of the table,
+so it looks more like a real Tic Tac Toe board (Removing the borders of very outside table td's)*/
+table{
+  position: relative;
+  top: 18%;
+  width: 100%;
+  border-collapse: collapse;
+}
+table tr:first-child td {
+  border-top: none;
+}
+table tr td:first-child {
+  border-left: none;
+}
+table tr td:last-child {
+  border-right: none;
+}
+table tr:last-child td{
+  border-bottom: none;
+}
+/*Now after the Tic Tac Toe board looks more like a real one, it's time to stylize each individual cell.
+so the block you see below applies to all table cells. There are attributes for cell size (width and height),
+as well as for cell border and cell color (color attribute applies to the text inside of cell which is X or O),
+but remember, we removed some cell borders in the previous blocks. You can visually see what it all does to the styling of the page*/
+td{
+  width: 100px;
+  height: 100px;
+  border: 2px solid #e67e00;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  text-align: center;
+  vertical-align: center;
+  cursor: pointer;
+}
+/*Some nice feedback when the user hovers with the mouse over the each table cell, but it's rgbA because we need alpha to match the .game tag,
+as it has some transparency, and also to don't make the color change two dramatic when the user hovers over the cell*/
+td:hover{
+  background: rgba(255, 255, 255, 0.2);
+  transition-duration: 250ms;
+}
+/*The following block gives the same visual appearance as the all links in the game page,
+except that this link is little bit smaller, so it doesn't stand out to much from the .game tag*/
+#playBtn{
+  display: none;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  width: 135px;
+  height: 32px;
+  padding: 5px;
+  transform: translate(-50%, 0);
+  border: 1px solid #e67e00;
+  border-radius: 25px;
+  background: black;
+  color: #e67e00;
+  font-family: Impact, Charcoal, sans-serif;
+  text-decoration: none;
+  text-align: center;
+  transition-duration: 150ms;
+}
+/*Some nice feedback when the mouse cursor is placed over this tag, again, same changes as in all other buttons/links (width, background color and letter spacing)*/
+#playBtn:hover{
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.75);
+  width: 150px;
+  letter-spacing: 2px;
+  transition-duration: 150ms;
+}
+/*This division takes more effect in JavaScript file. It is visible when the game is over (the user has won, lost or it's a tie game)
+Only until the game is over it should not be visible, and that's why we set the display attribute to "none" (JavaScript can later make use of it and set it to "block" if the game is over).
+It has positioning attributes, so it sits above the Tic Tac Toe board, color attribute to make sure that the text inside is white and visible,
+background attribute set to black, and border radius. All again to match the Project's theme*/
+.rezultat{
+  display: none;
+  position: relative;
+  width: 500px;
+  height: 50px;
+  margin-top: -370px;
+  margin-left: -85px;
+  padding-top: 7px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 12px;
+  background: black;
+  color: white;
+  opacity: 75%;
+}
+/*Just like in previous block, this block also takes more effect in JavaScript file. It appears once, at the very beginning of the game and it holds a text
+value to inform the user that game has started and to make a first move*/
+.gameStart{
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 50px;
+  margin-top: -370px;
+  padding-top: 7px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 12px;
+  background: black;
+  color: white;
+  opacity: 75%;
+}
+/*As you have probably already seen in the html file, this division allows the user to choose the sign for playing the game (X or O), so much more work is done in JavaScript, 
+and that's why here also the display attribute is set to "none" for now. Other than that, this block has other attributes for positioning, so it sits in the center of .game tag,
+and the color attribute with the value "#e67e00" you can often see in almost every other tag in this project, because that's what it's theme is, right.*/
+.izbor{
+  display: none;
+  position: absolute;
+  top: 145px;
+  left: 50%;
+  width: 220px;
+  margin-left: -115px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  font-size: 30px; 
+  text-align: center;
+  color: #e67e00;
+}
+/*Not much here, just making sure that the cursor stays the same when the user hovers over this section*/
+.izbor:hover{
+  cursor: default;
+  transition-duration: 250ms;
+}
+/*As you can see visually, in the single player page you have an option to choose a sign for playing the game (X or O).
+So here I just gave those buttons some style to match the Project's theme, so they have that ugly default look.
+But as you can see, there aren't that much of attributes, but still it all makes noticable deference visually.
+There are attributes for the button size, border, background set to transparent and  color set to white, because
+they obviously hold letters inside (X and O) and those letters need to be distinguishable*/
+.izbor button{
+  width: 60px;
+  height: 60px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size:  30px;
+  border-radius: 12px;
+  background: transparent;
+  color: white;
+  transition-duration: 500ms;
+}
+/*Now it is much, well, visually, because these small list of attributes make a nice little change when the user hovers over
+the individual button. Again trying to match the Project's theme by giving it that standard color, and border color and border radius,
+but making sure that background color stays transparent*/
+.izbor button:hover{
+  cursor: pointer;
+  border: 2px solid #e67e00;
+  border-radius: 50%;
+  background: transparent;
+  color: #e67e00;
+  transition-duration: 500ms;
+}
+/*You probably don't know what's going on down here... I mean you do of course, but the question is why. You can visually see it when you 
+have to choose from X or O sign, so that it. That "or" in between lol, got it? 
+So we can't just put the buttons containing the signs user can choose from. We need that simple "or" in between so the user won't get confused,
+and that's why the first block below has margin-right attribute and the second block below has margin-left attribute. Simply to make some space
+between the "or" and the buttons*/
+.izbor  button:first-of-type {
+  margin-right: 10px;
+}
+.izbor  button:last-of-type {
+  margin-left: 10px;
+}
+/*The following two blocks are used to display the scores when the game is in progress. Until the game starts, they need to have the display attribute
+set to "none" and later it can be set back to "block" using JavaScript. The other attributes here are just for positioning and one for color set to white.
+The first block below is holding the user score value, so it is positioned to sit at bottom left next to the Tic Tac Toe board. */
+.playerScore{
+  display: none;
+  position: absolute;
+  top: 90%;
+  left: 12%;
+  font-size: 25px;
+  color: white;
+}
+/*Everything same as in the block above, except that this block holds the ai score value, so it is positioned to sit at bottom right next to the Tic Tac Toe board.*/
+.aiScore{
+  display: none;
+  position: absolute;
+  top: 90%;
+  left: 78%;
+  font-size: 25px;
+  color: white;
+}
+/*Styling a #copy tag which contains my name (explained in html file). Attributes for positioning, width so it is always the same as the window width, background and color*/
+#copy{
+  position: absolute;
+  top: 98%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.95);    
+  color: white;
+  text-align: center;
+}
+@keyframes animationOn{
+  from{
+      opacity: 0;
+      transform: rotateX(-10deg);
+  }
+  to{
+      opacity: 1;
+      transform: rotateX(0);
+      opacity: 100%;
+  }
+}
+@media screen and (max-width: 1740px){
+  .playerX{
+    left: -120%;
+  }
+  .playerO{
+    right: -120%;
+  }
+  #playBtn2{
+    left: -62%;
+  }
+}
+@media screen and (max-width: 1460px){
+  .game{
+    left: 20%;
+    width: 60%;
+  }
+  .playerX{
+    top: -80%;
+    left: 0;
+  }
+  .playerO{
+    right: -2%;
+  }
+  #playBtn2{
+    left: 52%;
+  }
+  .soundOnBtn,
+  .soundOffBtn{
+    left: 90%;
+  }
+}
+@media screen and (max-width: 1000px){
+  .game{
+    left: 5%;
+    width: 90%;
+  }
+  .soundOnBtn,
+  .soundOffBtn{
+    left: 92%;
+  }
+}
+@media screen and (max-width: 700px){
+  .rezultat{
+    width: 300px;
+    margin-left: 5px;
+  }
+  .aiScore{
+    left: 69%;
+  }
+  .soundOnBtn,
+  .soundOffBtn{
+    left: 86%;
+  }
+}
+@media screen and (max-height: 2000px){
+  .game{
+    height: 470px;
+  }
+}
+@media screen and (max-height: 450px){
+  .game{
+    margin-top: 50px;
+  }
+  #copy{
+    position: fixed;
+    top: 97%;
+  }
+}
+/*Velickovic Djordje*/

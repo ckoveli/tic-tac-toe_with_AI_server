@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<!--Velickovic Djordje-->
+
+    <!--All the links for CSS and JavaScript files are putted in the head section-->
+    <head>
+        <title>Overview</title>
+        <meta charset="UTF-8"> <!--Character encoding. Not necessary, but just to specify character encoding-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Reference to display screen-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <div class="topBar"> <!--Division for top navigation bar containing links to other pages-->
+            <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a id="a2" href="./game/game.html">Tic Tac Toe</a></li>
+            <li class="profileBtn" onclick="window.location.href = './users/profile/profile.html'"></li>
+            </ul>
+        </div>
+
+        <div class="pageInfo"> <!--Division for describing the page, right after the navigation bar-->
+            <h1>Here on this page, you can enjoy this old school game and play it with your friends!</h1>
+        </div>
+
+        <mark id="playBtn"><a href="./game/game.html">Play Now</a></mark> <!--Play button with link to the Game page containing all other pages-->
+
+        <div class="gameInfo"> <!--Another division for describing the page, but with more detailed information. There are mark tags that are used in JavaScript file for showing less or more text-->
+            <p>This page is made by <i>Veličković Đorđe</i> as <b>Project</b><mark id="dots" style="background-color: transparent; color: white; display: none">...</mark><mark id="more"> <b>Work</b> for <b>Computer Practicum II</b> subject of the <strong><i>University of Primorska</i></strong>.
+                It is one of 3 Projects that students can choose. Due to global situation with the <i>COVID-19</i> and inability for Universities to
+                stick with regular exams which require physical attendance, these Projects are counted as <strong>Midterm I</strong> exam.
+                There are minimum requirements students have to meet such as <i>User Interface</i> design as well as <i>Optional Features</i>
+                for a higher grade. By now you probably already know what I am shooting for.
+                
+                I'll give my best to make this page be fun and pleasurable experience to you but also for me to reach higher grades. <a href="./game/game.html"><strong id="joy">Enjoy!</strong></a></mark>
+                <mark id="readBtn" onclick="readMore()">Read more</mark></p> <!--This is the main mark tag used in JavaScript. When clicked, another mark tag containing more text is shown and vice versa-->
+        </div>
+
+        <div class="tags"> <!--Simple division for tags that you can visually see at very bottom of the page right before the copyright "footer" containing my name-->
+            <ul>
+                <li>#Famnit</li>
+                <li>#CP2</li>
+                <li>#StayAtHome</li>
+            </ul>
+        </div>
+
+        <p id="copy">&copy; Veličković Đorđe</p> <!--A "footer" at the bottom of the page to reserve my rights of this Project lol. Every page in this Project has this "footer"-->
+    </body>
+<!--Velickovic Djordje-->
+</html>

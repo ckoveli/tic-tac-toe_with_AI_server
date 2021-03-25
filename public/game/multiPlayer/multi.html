@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<!--Velickovic Djordje-->
+
+    <!--All the links for CSS and JavaScript files are putted in the head section-->
+    <head>
+        <title>Tic Tac Toe - Multiplayer Room</title>
+        <meta charset="UTF-8"> <!--Character encoding. Not necessary, but just to specify character encoding-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!--Reference to display screen-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="http://code.jquery.com/jquery-2.1.4.min.js" defer></script>
+        <script src="script.js" defer></script>
+    </head>
+    <body onload="check()">
+        <div class="topBar"> <!--Division for top navigation bar containing links to other pages-->
+            <ul>
+            <li><a id="a2" href="../../index.html">Overview</a></li>
+            <li><a href="../game.html">Tic Tac Toe</a></li>
+            <li class="profileBtn" onclick="window.location.href = '../../users/profile/profile.html'"></li>
+            </ul>
+        </div>
+
+        <div class="game"> <!--Division for the little black box that you can visually see at center of the page. 
+            All other divisions and tags are in this division, except for the "footer" at the bottom.
+            This type of style, "playing in the box" is present across all the pages in this Project-->
+        <a href="../game.html"><div class="backBtn"></div></a> <!--A link to the game page, the one containing all game options.
+                There's a div tag because I used it for displaying "Back Button Image"
+                and make overall experience cleaner. It is also used in JavaScript file--->
+
+        <!--Divisions used in JavaScript for playing music and make the experience entertaining. It is also used in CSS to display "Sound Buttons"-->
+        <div class="gameStart"> Symbol: <div id="symbol">waiting...</div></div> <!--Division that takes effect in JavaScript.
+                                                                                It is used in server file to give the user
+                                                                                the current information, whether the multiplayer
+                                                                                game has started, or it's waiting for other opponent-->
+
+        <!--Division where Tic Tac Toe board and some text feedback (when user wins or loses and when it's a tie game) sits in
+		As you might've escpect, 9 cells because it's a tic tac toe! Also used in JavaScript to bring functionality-->
+        <div class="field">
+            <button class="cell" id="a0"></button>
+            <button class="cell" id="a1"></button>
+            <button class="cell" id="a2"></button>
+            <button class="cell" id="b0"></button>
+            <button class="cell" id="b1"></button>
+            <button class="cell" id="b2"></button>
+            <button class="cell" id="c0"></button>
+            <button class="cell" id="c1"></button>
+            <button class="cell" id="c2"></button>
+
+            <div class="rezultat"><div id="messages">Waiting for opponent...</div></div> <!--Another division that takes effect in JavaScript.
+                                                                                            Also used in server file to give the user the current information.-->
+        </div>
+        </div>
+
+        <p id="copy">&copy; Veličković Đorđe</p> <!--A "footer" at the bottom of the page to reserve my rights of this Project lol. Every page in this Project has this "footer"-->
+    </body>
+<!--Velickovic Djordje-->
+</html>
